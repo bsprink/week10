@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>BANK</title>
+	<style>
+	body
+
+
+		#appBox{
+		background-color: #faebd7;
+		width: 500px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+		h3:nth-child(odd){
+			border-bottom: 3px solid black;
+		}
+		h1{
+			text-align: center;
+			color: #577a3a
+		}
+		#contentBox{
+			background-color: #cfdbc5;
+			font-family: sans-serif;
+			width:200px;
+			height: 400px;
+			display: inline-block;
+			margin-left:50px; 
+		
+			
+		}
+		#resultsBox{
+			background-color: #cfdbc5;
+			font-family: sans-serif;
+			width:200px;
+			height: 400px;
+			display: inline-block;
+			text-align: center;
+			
+		}
+		#buttons{
+			background-color: #8b795e;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+<div id=appBox>
+	
+	<h1>Poor Folks Bank</h1>
+
+	<div id="contentBox">
+<hr>	
+	<div id="ml">Mary Lamb</div>
+<hr>
+	<div id="rp">Remmington Pencilton</div>
+<hr>
+	<div>Adam Sandlot</div>
+<hr>
+	<div>Billy Madison</div>
+<hr>
+	<div>Happy Gilmore</div>
+<hr>	
+	<div>Longfellow Deeds</div>
+<hr>
+	<div>Robbie Hart</div>
+<hr>
+	<div>Dave Buznik</div>
+<hr>
+	<div>Bobby Boucher</div>
+<hr>
+	<div>John Wick</div>
+<hr>
+	</div>
+		<div id="resultsBox">
+			
+			<hr>
+			<div id="result1">result</div>
+			<hr>
+			<div id="result2">result</div>
+			<hr>
+			<div id="result3">result</div>
+			<hr>
+			<div id="result4">result</div>
+			<hr>
+			<div id="result5">result</div>
+			<hr>
+			<div id="result6">result</div>
+			<hr>
+			<div id="result7">result</div>
+			<hr>
+			<div id="result8">result</div>
+			<hr>
+			<div id="result9">result</div>
+			<hr>
+			<div id="result10">result</div>
+			<hr>
+		</div>
+
+
+
+
+	<div id="buttons">
+	<button id="loadbtn1">Balance</button>
+	<button id="loadbtn2">Credit Score</button>
+	<button id="loadbtn3">Cards</button>
+	</div>
+</div>	
+
+	<script src="scripts/jquery.js"></script>
+	<script>
+		$(document).ready(function(){
+			$('#loadbtn1').click(function(){
+				//alert();
+				$.getJSON("scripts/bank.json",function(data){
+					$('#result1').html(data.customers[0].Balance);
+						for(var i=0; i<data.customers.length; i++){
+							document.getElementById("resultsBox").innerHTML += " " + String(data.customers[i].Balance) + " ";
+
+						}
+				});
+			});
+		});
+
+$('#loadbtn2').click(function(){
+				//alert();
+				$.getJSON("scripts/bank.json",function(data){
+					$('#result1').html(data.customers[0].CreditScore);
+						for(var i=0; i<data.customers.length; i++){
+							document.getElementById("resultsBox").innerHTML += " " + String(data.customers[i].CreditScore) + " ";
+							
+						}
+				});
+			});
+				
+
+
+$('#loadbtn3').click(function(){
+				//alert();
+				$.getJSON("scripts/bank.json",function(data){
+					$('#result1').html(data.customers[0].Cards);
+						for(var i=0; i<data.customers.length; i++){
+							document.getElementById("resultsBox").innerHTML += " " + String(data.customers[i].Cards) + " ";
+							
+						}
+				});
+			});
+
+
+
+
+
+	</script>
+
+</body>
+</html>
