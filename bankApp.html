@@ -76,25 +76,25 @@
 		<div id="resultsBox">
 			
 			<hr>
-			<div id="result1">result</div>
+			<div class="results" id="result1">result</div>
 			<hr>
-			<div id="result2">result</div>
+			<div class="results" id="result2">result</div>
 			<hr>
-			<div id="result3">result</div>
+			<div class="results" id="result3">result</div>
 			<hr>
-			<div id="result4">result</div>
+			<div class="results" id="result4">result</div>
 			<hr>
-			<div id="result5">result</div>
+			<div class="results" id="result5">result</div>
 			<hr>
-			<div id="result6">result</div>
+			<div class="results" id="result6">result</div>
 			<hr>
-			<div id="result7">result</div>
+			<div class="results" id="result7">result</div>
 			<hr>
-			<div id="result8">result</div>
+			<div class="results" id="result8">result</div>
 			<hr>
-			<div id="result9">result</div>
+			<div class="results" id="result9">result</div>
 			<hr>
-			<div id="result10">result</div>
+			<div class="results" id="result10">result</div>
 			<hr>
 		</div>
 
@@ -116,7 +116,8 @@
 				$.getJSON("scripts/bank.json",function(data){
 					$('#result1').html(data.customers[0].Balance);
 						for(var i=0; i<data.customers.length; i++){
-							document.getElementById("resultsBox").innerHTML += " " + String(data.customers[i].Balance) + " ";
+							document.getElementsByClassName("results")[i].innerHTML="";
+							document.getElementsByClassName("results")[i].innerHTML += " " + String(data.customers[i].Balance) + " ";
 
 						}
 				});
@@ -128,7 +129,8 @@ $('#loadbtn2').click(function(){
 				$.getJSON("scripts/bank.json",function(data){
 					$('#result1').html(data.customers[0].CreditScore);
 						for(var i=0; i<data.customers.length; i++){
-							document.getElementById("resultsBox").innerHTML += " " + String(data.customers[i].CreditScore) + " ";
+							document.getElementsByClassName("results")[i].innerHTML="";
+							document.getElementsByClassName("results")[i].innerHTML += " " + String(data.customers[i].CreditScore) + " ";
 							
 						}
 				});
@@ -141,7 +143,8 @@ $('#loadbtn3').click(function(){
 				$.getJSON("scripts/bank.json",function(data){
 					$('#result1').html(data.customers[0].Cards);
 						for(var i=0; i<data.customers.length; i++){
-							document.getElementById("resultsBox").innerHTML += " " + String(data.customers[i].Cards) + " ";
+							document.getElementsByClassName("results")[i].innerHTML="";
+							document.getElementsByClassName("results")[i].innerHTML += " " + String(data.customers[i].Cards) + " ";
 							
 						}
 				});
